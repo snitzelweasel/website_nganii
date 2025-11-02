@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Ngani</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Website ni Rod</h1>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                <span class="sun-icon">☀️</span>
+                <span class="moon-icon">🌙</span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="playlist" class="section">
+            <h2>My Playlist</h2>
+            <div class="playlist-controls">
+                <button id="add-song-btn" class="add-song-btn">🎵 Add Song</button>
+            </div>
+            <div id="playlist-container" class="playlist-container">
+                <p class="empty-playlist">No songs added yet. Click "Add Song" to get started!</p>
+            </div>
+        </section>
+
+        <section id="hobbies" class="section">
+            <h2>My Hobbies</h2>
+            <div class="hobbies-container">
+                <div class="hobby-item">
+                    <h3>Fitness</h3>
+                    <img src="images/fitness.jpg" alt="Fitness" class="hobby-image clickable-image" onclick="openImageModal(this)">
+                    <p>I'm passionate about staying fit and healthy through regular gym workouts. I enjoy strength training, cardio exercises, and maintaining a consistent fitness routine that keeps me energized and motivated throughout the day.</p>
+                </div>
+                <div class="hobby-item">
+                    <h3>Watching Movies</h3>
+                    <img src="images/movies.jpg" alt="Watching Movies" class="hobby-image clickable-image" onclick="openImageModal(this)">
+                    <p>I love exploring different genres of films, from thrilling action movies to thought-provoking dramas and captivating sci-fi adventures. There's nothing quite like getting immersed in a great story and experiencing the artistry of cinematography and storytelling.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="feedback">
+        <h2>Feedback</h2>
+        <form id="feedback-form" class="feedback-form">
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+                <span class="error-message" id="email-error"></span>
+            </div>
+            <div class="form-group">
+                <label for="feedback">Your Feedback:</label>
+                <textarea id="feedback-text" name="feedback" rows="5" required></textarea>
+                <span class="error-message" id="feedback-error"></span>
+            </div>
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </footer>
+
+    <!-- Add Song Modal -->
+    <div id="add-song-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>🎵 Add New Song</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <form id="add-song-form">
+                <div class="form-group">
+                    <label for="song-iframe">Spotify Embed Code:</label>
+                    <textarea id="song-iframe" name="iframe" rows="4" placeholder="Paste your Spotify iframe embed code here..." required></textarea>
+                    <span class="error-message" id="iframe-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="song-password">Password:</label>
+                    <input type="password" id="song-password" name="password" placeholder="Enter password to add song" required>
+                    <span class="error-message" id="password-error"></span>
+                </div>
+                <div class="modal-buttons">
+                    <button type="button" class="cancel-btn">Cancel</button>
+                    <button type="submit" class="add-btn">Add Song</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Image Modal -->
+    <div id="image-modal" class="image-modal">
+        <div class="image-modal-content">
+            <span class="close-image-modal">&times;</span>
+            <img id="modal-image" class="modal-image" src="" alt="">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
